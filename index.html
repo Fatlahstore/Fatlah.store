@@ -3,281 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatlah Store | متجر فتلة للخيوط والغزول</title>
+    <title>Fatlah Store | منصة فتلة المتكاملة للخيوط والتصنيع</title>
     
-    <!-- الأكواد التي تشرح لجوجل اسم المتجر ونوعه -->
-    <meta name="description" content="مرحباً بكم في Fatlah Store، المتجر المتخصص في تصنيع وتجارة أجود أنواع الخيوط والغزول.">
-    <meta name="keywords" content="Fatlah Store, متجر فتلة, خيوط, غزول">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "OnlineStore",
-      "name": "Fatlah Store",
-      "url": "https://anafex0123-ux.github.io/Fatlah.store/", 
-      "description": "متجر متخصص في تصنيع وتجارة الخيوط والغزول عالية الجودة."
-    }
-    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --amazon-black: #131921;
-            --amazon-light-black: #232f3e;
-            --brand-red: #cc0c39;
-            --brand-hover-red: #b10a32;
-            --text-white: #ffffff;
-            --bg-light: #f3f3f3;
-            --card-bg: #ffffff;
-            --text-dark: #333333;
+            --primary-color: #cc0239; /* أحمر فتلة الشغوف */
+            --dark-bg: #131921;
+            --card-bg: #232f3e;
+            --text-light: #ffffff;
+            --accent-color: #ffc107;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-dark); scroll-behavior: smooth; }
-        
-        header { background-color: var(--amazon-black); color: var(--text-white); position: sticky; top: 0; z-index: 1000; }
-        .nav-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; gap: 10px; }
-        .logo { font-size: 22px; font-weight: bold; color: var(--text-white); text-decoration: none; }
-        .logo span { color: var(--brand-red); }
-        .search-container { flex: 1; display: flex; max-width: 600px; }
-        .search-container input { width: 100%; padding: 10px; border: none; border-top-right-radius: 4px; border-bottom-right-radius: 4px; outline: none; }
-        .search-container button { background-color: var(--brand-red); border: none; color: white; padding: 0 15px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
-        .nav-icons { font-size: 14px; cursor: pointer; background: var(--brand-red); padding: 5px 10px; border-radius: 4px; font-weight: bold; }
-        
-        .nav-bottom { background-color: var(--amazon-light-black); padding: 8px 15px; display: flex; gap: 15px; overflow-x: auto; white-space: nowrap; }
-        .nav-bottom a { color: var(--text-white); text-decoration: none; font-size: 14px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
 
-        .hero-banner { background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(243,243,243,1) 100%), url('https://images.unsplash.com/photo-1558089687-f282ffcbd1d5?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--text-white); text-shadow: 2px 2px 4px rgba(0,0,0,0.7); text-align: center; padding: 20px; }
-        .hero-banner h1 { font-size: 28px; margin-bottom: 5px; }
-        
-        .main-container { padding: 15px; max-width: 1200px; margin: 0 auto; }
-        .section-block { margin-bottom: 35px; scroll-margin-top: 130px; }
-        .section-title { font-size: 20px; margin-bottom: 15px; border-right: 4px solid var(--brand-red); padding-right: 10px; }
-        
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
-        .product-card { background-color: var(--card-bg); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; }
-        .product-image { width: 100%; height: 140px; object-fit: cover; border-radius: 6px; }
-        .product-title { font-size: 14px; font-weight: 600; margin: 8px 0 5px 0; height: 38px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-        .rating { color: #ffa41c; font-size: 12px; margin-bottom: 8px; }
-        .price-tag { font-size: 16px; font-weight: bold; margin-bottom: 10px; }
-        .price-tag span { font-size: 12px; color: var(--brand-red); }
-        
-        .btn-whatsapp { background-color: var(--brand-red); color: white; text-align: center; padding: 8px 5px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
 
-        /* لوحة التحكم الخارقة لتعديل الصفحة والمنتجات مرئياً */
-        .admin-panel { background: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; border: 3px dashed var(--brand-red); display: none; }
-        .admin-panel h3 { margin-bottom: 15px; color: var(--amazon-black); border-bottom: 2px solid #eee; padding-bottom: 5px; }
-        .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-        @media (max-width: 600px) { .admin-grid { grid-template-columns: 1fr; } }
-        .admin-panel input, .admin-panel select { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-        .admin-btn { background: var(--brand-red); color: white; border: none; padding: 12px; width: 100%; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 15px; }
-        .admin-btn.secondary { background: var(--amazon-light-black); margin-top: 5px; }
-        .delete-btn { position: absolute; top: 5px; left: 5px; background: rgba(204,12,57,0.9); color: white; border: none; border-radius: 50%; width: 25px; height: 25px; font-size: 12px; cursor: pointer; display: none; z-index: 10; }
-        
-        footer { background-color: var(--amazon-black); color: #dddddd; text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; }
+        /* الهيدر الاحترافي البارق */
+        header {
+            background: linear-gradient(135deg, #0f141a, #232f3e);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .logo-area h1 {
+            font-size: 2.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .logo-area span {
+            color: var(--primary-color);
+        }
+
+        .tagline {
+            color: #99aab5;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        /* قسم الترحيب والشغف الحركي */
+        .hero-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: radial-gradient(circle, rgba(204,2,57,0.15) 0%, rgba(19,25,33,1) 70%);
+        }
+
+        .hero-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        /* شبكة الأقسام الستة التخصصية بتصميم كروت تفاعلي */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-right: 5px solid var(--primary-color);
+            padding-right: 15px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(204,2,57,0.3);
+        }
+
+        .category-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .category-card p {
+            color: #99aab5;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-explore {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-explore:hover {
+            background: #b00232;
+        }
+
+        /* 💬 نافذة وأيقونة الدردشة الفورية والشغوفة للعملاء */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* يسار الشاشة لعدم التداخل مع عناصر الهاتف */
+            z-index: 1000;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(204,2,57,0.5);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-button i {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 320px;
+            background: #1a222d;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 2px solid var(--primary-color);
+            display: none; /* مخفية وتظهر بالضغط */
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .chat-header {
+            background: var(--primary-color);
+            padding: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-body {
+            padding: 15px;
+            height: 200px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            color: #99aab5;
+        }
+
+        .chat-footer {
+            display: flex;
+            border-top: 1px solid #232f3e;
+            padding: 10px;
+            background: #131921;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            background: #232f3e;
+            border: none;
+            padding: 8px;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .chat-footer button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 15px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* التوافق مع الهواتف */
+        @media (max-width: 768px) {
+            .logo-area h1 { font-size: 2rem; }
+            .hero-section h2 { font-size: 1.6rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="nav-top">
-            <a href="#" class="logo" id="displayLogoName">فتلة<span>.store</span></a>
-            <div class="search-container">
-                <input type="text" id="searchInput" oninput="searchProducts()" placeholder="ابحث في المتجر...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-            <div class="nav-icons" onclick="triggerAdmin()"><i class="fa-solid fa-pen-to-square"></i> تعديل الصفحة</div>
-        </div>
-        <div class="nav-bottom">
-            <a href="#all-sections">كل الأقسام</a>
-            <a href="#khayot">خيوط غزل</a>
-            <a href="#aqmesha">أقمشة ممتازة</a>
-            <a href="#makinat">مكينات ومستلزمات</a>
+        <div class="logo-area">
+            <h1>Fatlah<span>.Store</span></h1>
+            <div class="tagline">المنصة الرسمية المعتمدة لتجارة وتصنيع الغزل والنسيج</div>
         </div>
     </header>
 
-    <div class="hero-banner">
-        <h1 id="displayBannerTitle">مرحباً بك في متجر فتلة</h1>
-        <p id="displayBannerDesc">كل ما فيه فتلة عندنا - جودة غزل لا مثيل لها</p>
-    </div>
+    <section class="hero-section">
+        <h2>من قلب ورش التصنيع إليك مباشرة 🧵</h2>
+        <p>نصنع الجودة وننسج الثقة في كل فتلة خيط وثوب قماش</p>
+    </section>
 
-    <main class="main-container" id="all-sections">
+    <main class="main-container">
+        <h2 class="section-title">الأقسام والخدمات التخصصية</h2>
         
-        <div class="admin-panel" id="adminPanel">
-            
-            <div class="admin-grid">
-                <div>
-                    <h3>⚙️ تعديل نصوص الصفحة واجهتها</h3>
-                    <label>اسم المتجر الرئيسي:</label>
-                    <input type="text" id="inputLogoName" placeholder="مثال: فتلة">
-                    <label>عنوان البانر الكبير:</label>
-                    <input type="text" id="inputBannerTitle" placeholder="مثال: مرحباً بك في متجرنا">
-                    <label>الوصف تحت العنوان:</label>
-                    <input type="text" id="inputBannerDesc" placeholder="مثال: كل مستلزمات الخياطة والغزل">
-                    <button class="admin-btn" onclick="savePageTexts()">حفظ نصوص الصفحة فوراً</button>
-                </div>
-                
-                <div>
-                    <h3>📦 إضافة منتج جديد فوراً</h3>
-                    <label>اسم المنتج تفصيلي:</label>
-                    <input type="text" id="pTitle" placeholder="مثال: بكر صوف فاخر">
-                    <label>السعر (بالجنيه المصري):</label>
-                    <input type="text" id="pPrice" placeholder="مثال: 150">
-                    <label>رابط صورة المنتج (اختياري):</label>
-                    <input type="text" id="pImage" placeholder="ضع رابط الصورة هنا">
-                    <label>قسم المنتج:</label>
-                    <select id="pCategory">
-                        <option value="khayot">خيوط غزل</option>
-                        <option value="aqmesha">أقمشة ممتازة</option>
-                        <option value="makinat">مكينات ومستلزمات</option>
-                    </select>
-                    <button class="admin-btn secondary" onclick="addNewProduct()">إضافة المنتج للقسم لايف</button>
-                </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <i class="fa-solid Mills fa-scroll"></i>
+                <h3>الخيوط والغزل</h3>
+                <p>أجود أنواع خيوط القطن، البوليستر، والصوف المخصصة لكافة أنواع الحياكة والتطريز.</p>
+                <a href="#" class="btn-explore">عرض المنتجات</a>
             </div>
 
-        </div>
+            <div class="category-card">
+                <i class="fa-solid fa-scissors"></i>
+                <h3>النسيج والأقمشة</h3>
+                <p>أقمشة مصنعة محلياً بجودة عالية لخدمة مصانع الملابس وتجار الجملة والتجزئة.</p>
+                <a href="#" class="btn-explore">تصفح الأقمشة</a>
+            </div>
 
-        <div class="section-block" id="khayot">
-            <h2 class="section-title">قسم خيوط الغزل</h2>
-            <div class="products-grid" id="grid-khayot"></div>
-        </div>
+            <div class="category-card">
+                <i class="fa-solid fa-shirt"></i>
+                <h3>الملابس والتوب</h3>
+                <p>تشكيلة واسعة من الملابس الجاهزة ومقاسات التوب المختلفة المصنعة بعناية.</p>
+                <a href="#" class="btn-explore">اكتشف الموديلات</a>
+            </div>
 
-        <div class="section-block" id="aqmesha">
-            <h2 class="section-title">قسم الأقمشة الممتازة</h2>
-            <div class="products-grid" id="grid-aqmesha"></div>
-        </div>
+            <div class="category-card">
+                <i class="fa-solid fa-rug"></i>
+                <h3>الستائر</h3>
+                <p>أحدث صيحات أقمشة الستائر والديكورات المنزلية التي تضفي لمسة جمالية لمنزلك.</p>
+                <a href="#" class="btn-explore">رؤية الكتالوج</a>
+            </div>
 
-        <div class="section-block" id="makinat">
-            <h2 class="section-title">قسم المكينات والمستلزمات</h2>
-            <div class="products-grid" id="grid-makinat"></div>
-        </div>
+            <div class="category-card">
+                <i class="fa-solid fa-gears"></i>
+                <h3>مكن تشغيل</h3>
+                <p>ماكينات الخياطة، الأوفر، وقطع الغيار الصناعية ل تجهيز الورش والمصانع.</p>
+                <a href="#" class="btn-explore">المعدات المتاحة</a>
+            </div>
 
+            <div class="category-card">
+                <i class="fa-solid fa-mitten"></i>
+                <h3>أدوات هاند ميد</h3>
+                <p>كل ما يحتاجه عشاق المشغولات اليدوية من إبر، كروشيه، وخيوط مكرمية متينة.</p>
+                <a href="#" class="btn-explore">تسوق الأدوات</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 <span id="footerName">متجر فتلة</span>. جميع الحقوق محفوظة.</p>
-    </footer>
+    <div class="chat-widget">
+        <div class="chat-button" onclick="toggleChat()">
+            <i class="fa-solid fa-comments"></i>
+        </div>
+        
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>💬 دردشة Fatlah Store Direct</span>
+                <i class="fa-solid fa-xmark" style="cursor:pointer;" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <p style="color:var(--accent-color); margin-bottom:10px;">👋 مرحباً بك في متجر فتلة! اكتب استفسارك هنا وسيرد عليك قسم التصنيع والمبيعات فوراً.</p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="اكتب رسالتك هنا...">
+                <button onclick="sendMessage()">إرسال</button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // البيانات الافتراضية الأولية للموقع
-        const defaultPageData = {
-            logoName: "فتلة",
-            bannerTitle: "مرحباً بك في متجر فتلة",
-            bannerDesc: "كل ما فيه فتلة عندنا - جودة غزل لا مثيل لها"
-        };
-
-        const defaultProducts = [
-            { id: 1, title: "خيوط غزل قطن مصري فاخر 100% للتريكو", price: "150", img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=400", cat: "khayot" },
-            { id: 2, title: "أقمشة منسوجة ملونة فائقة الجودة للملابس", price: "280", img: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=400", cat: "aqmesha" },
-            { id: 3, title: "بكر خيوط صوف سميك ملون للأعمال اليدوية", price: "95", img: "https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400", cat: "khayot" }
-        ];
-
-        // تحميل البيانات المخزنة أو استخدام الافتراضية
-        let pageData = JSON.parse(localStorage.getItem('fatlah_page_data')) || defaultPageData;
-        let products = JSON.parse(localStorage.getItem('fatlah_products')) || defaultProducts;
-        const myPhone = "201063763651";
-
-        // دالة تطبيق وعرض نصوص الصفحة المحدثة
-        function renderPageTexts() {
-            document.getElementById('displayLogoName').innerHTML = `${pageData.logoName}<span>.store</span>`;
-            document.getElementById('displayBannerTitle').innerText = pageData.bannerTitle;
-            document.getElementById('displayBannerDesc').innerText = pageData.bannerDesc;
-            document.getElementById('footerName').innerText = `متجر ${pageData.logoName}`;
-            document.getElementById('siteTitle').innerText = `متجر ${pageData.logoName} | كل ما تحتاجه`;
-            
-            // ملء الخانات داخل لوحة التحكم لسهولة التعديل
-            document.getElementById('inputLogoName').value = pageData.logoName;
-            document.getElementById('inputBannerTitle').value = pageData.bannerTitle;
-            document.getElementById('inputBannerDesc').value = pageData.bannerDesc;
-        }
-
-        // دالة حفظ نصوص الواجهة من المتصفح مباشرة
-        function savePageTexts() {
-            pageData.logoName = document.getElementById('inputLogoName').value || "فتلة";
-            pageData.bannerTitle = document.getElementById('inputBannerTitle').value || "";
-            pageData.bannerDesc = document.getElementById('inputBannerDesc').value || "";
-            
-            localStorage.setItem('fatlah_page_data', JSON.stringify(pageData));
-            renderPageTexts();
-            alert('تم تحديث نصوص وشكل الصفحة بنجاح بدون تعديل الكود!');
-        }
-
-        // دالة توزيع المنتجات على الأقسام
-        function renderProducts() {
-            document.getElementById('grid-khayot').innerHTML = '';
-            document.getElementById('grid-aqmesha').innerHTML = '';
-            document.getElementById('grid-makinat').innerHTML = '';
-
-            products.forEach(p => {
-                const imgUrl = p.img || 'https://images.unsplash.com/photo-1558089687-f282ffcbd1d5?q=80&w=400';
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <button class="delete-btn" onclick="deleteProduct(${p.id})">X</button>
-                    <img src="${imgUrl}" class="product-image">
-                    <div class="product-title">${p.title}</div>
-                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <div class="price-tag">${p.price} <span>جنيه</span></div>
-                    <a href="https://wa.me/${myPhone}?text=أهلاً%20متجر%20${encodeURIComponent(pageData.logoName)}،%20أريد%20طلب%20منتج:%20${encodeURIComponent(p.title)}%20بسعر%20${p.price}%20جنيه" target="_blank" class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> شراء عبر واتساب
-                    </a>
-                `;
-                const targetGrid = document.getElementById(`grid-${p.cat}`);
-                if(targetGrid) targetGrid.appendChild(card);
-            });
-            showDeleteButtons();
-        }
-
-        function addNewProduct() {
-            const title = document.getElementById('pTitle').value;
-            const price = document.getElementById('pPrice').value;
-            const img = document.getElementById('pImage').value;
-            const cat = document.getElementById('pCategory').value;
-
-            if(!title || !price) { alert('برجاء كتابة اسم المنتج والسعر!'); return; }
-
-            const newP = { id: Date.now(), title, price, img, cat };
-            products.push(newP);
-            localStorage.setItem('fatlah_products', JSON.stringify(products));
-            renderProducts();
-
-            document.getElementById('pTitle').value = '';
-            document.getElementById('pPrice').value = '';
-            document.getElementById('pImage').value = '';
-            alert('تم إضافة منتجك الجديد للقسم بنجاح!');
-        }
-
-        function deleteProduct(id) {
-            if(confirm('هل تريد حذف هذا المنتج من واجهة المتجر؟')) {
-                products = products.filter(p => p.id !== id);
-                localStorage.setItem('fatlah_products', JSON.stringify(products));
-                renderProducts();
+        // فتح وإغلاق نافذة الدردشة التفاعلية
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            if (chatWindow.style.display === 'flex') {
+                chatWindow.style.display = 'none';
+            } else {
+                chatWindow.style.display = 'flex';
             }
         }
 
-        let isAdminVisible = false;
-        function triggerAdmin() {
-            isAdminVisible = !isAdminVisible;
-            document.getElementById('adminPanel').style.display = isAdminVisible ? 'block' : 'none';
-            showDeleteButtons();
+        // محاكاة إرسال الرسالة من العميل لتبدو حية وشغوفة
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            
+            if (input.value.trim() !== "") {
+                // إضافة رسالة العميل
+                const userMsg = document.createElement('p');
+                userMsg.style.color = "white";
+                userMsg.style.margin = "5px 0";
+                userMsg.innerHTML = `<strong>أنت:</strong> ${input.value}`;
+                chatBody.appendChild(userMsg);
+                
+                // تفريغ المدخل
+                input.value = "";
+                chatBody.scrollTop = chatBody.scrollHeight;
+                
+                // رد تلقائي شغوف ومؤقت لحين ربطه بالـ Backend والسيرفر الخاص بك
+                setTimeout(() => {
+                    const replyMsg = document.createElement('p');
+                    replyMsg.style.color = "#ffc107";
+                    replyMsg.style.margin = "5px 0";
+                    replyMsg.innerHTML = `<strong>فتلة:</strong> تم استلام رسالتك وجاري توجيهها للوحة التحكم الخاصة بالإدارة فوراً للرد عليك!`;
+                    chatBody.appendChild(replyMsg);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
         }
-
-        function showDeleteButtons() {
-            const btns = document.querySelectorAll('.delete-btn');
-            btns.forEach(b => b.style.display = isAdminVisible ? 'block' : 'none');
-        }
-
-        function searchProducts() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                const title = card.querySelector('.product-title').innerText.toLowerCase();
-                card.style.display = title.includes(query) ? 'flex' : 'none';
-            });
-        }
-
-        // تشغيل البداية وتثبيت التعديلات
-        renderPageTexts();
-        renderProducts();
     </script>
 </body>
 </html>
