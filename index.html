@@ -1063,3 +1063,416 @@
                         <option value="clothes">ملابس</option>
                         <option value="curtains">ستائر</option>
     
+                        <option value="curtains">ستائر</option>
+                        <option value="machines">مكن تشغيل</option>
+                        <option value="accessories">أدوات هاند ميد</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="ابحث عن منتجاتك المفضلة..." aria-label="حقل البحث">
+                    <button class="search-btn" aria-label="بحث"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions">
+                    <div class="suggestion-item"><i class="fas fa-search"></i><span>خيوط غزل قطن</span></div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i><span>أقمشة مخمل</span></div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i><span>ماكينة تريكو</span></div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="header-action" onclick="toggleCart()">
+                    <div class="header-action-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cartBadge">0</span>
+                    </div>
+                    <span class="header-action-label">السلة</span>
+                </div>
+                <div class="header-action" onclick="toggleWishlist()">
+                    <div class="header-action-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlistBadge">0</span>
+                    </div>
+                    <span class="header-action-label">المفضلة</span>
+                </div>
+                <div class="header-action" onclick="toggleAccount()">
+                    <div class="header-action-icon"><i class="fas fa-user"></i></div>
+                    <span class="header-action-label">حسابي</span>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="container nav-inner">
+            <div class="nav-all-categories" onclick="toggleCategories()">
+                <i class="fas fa-th-large"></i>
+                <span>جميع الأقسام</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">الرئيسية</a>
+                <a href="/products" class="nav-link">المنتجات</a>
+                <a href="/offers" class="nav-link">العروض</a>
+                <a href="/new" class="nav-link">جديد</a>
+                <a href="/about" class="nav-link">عن المتجر</a>
+                <a href="/contact" class="nav-link">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- ====== HERO SECTION ====== -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h1 class="hero-title">اكتشف عالم الخيوط والأقمشة</h1>
+                <p class="hero-subtitle">جودة عالية، أسعار تنافسية، تشكيلة واسعة لكل احتياجاتك</p>
+                <div class="hero-buttons">
+                    <a href="/products" class="btn btn-primary">تسوق الآن</a>
+                    <a href="/offers" class="btn btn-outline">العروض</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== FEATURES SECTION ====== -->
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                        <h3>شحن سريع</h3>
+                        <p>توصيل خلال 1-3 أيام</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>جودة مضمونة</h3>
+                        <p>منتجات أصلية 100%</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-undo"></i></div>
+                        <h3>إرجاع سهل</h3>
+                        <p>سياسة إرجاع 14 يوم</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <h3>دعم 24/7</h3>
+                        <p>فريق دعم متاح دائماً</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CATEGORIES SECTION ====== -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">تسوق حسب القسم</h2>
+                <div class="categories-grid">
+                    <a href="/category/yarn" class="category-card">
+                        <div class="category-img"><i class="fas fa-spool"></i></div>
+                        <h3>خيوط غزل</h3>
+                        <p>100+ منتج</p>
+                    </a>
+                    <a href="/category/fabric" class="category-card">
+                        <div class="category-img"><i class="fas fa-layer-group"></i></div>
+                        <h3>أقمشة</h3>
+                        <p>80+ منتج</p>
+                    </a>
+                    <a href="/category/clothes" class="category-card">
+                        <div class="category-img"><i class="fas fa-tshirt"></i></div>
+                        <h3>ملابس جاهزة</h3>
+                        <p>150+ منتج</p>
+                    </a>
+                    <a href="/category/curtains" class="category-card">
+                        <div class="category-img"><i class="fas fa-columns"></i></div>
+                        <h3>ستائر</h3>
+                        <p>60+ منتج</p>
+                    </a>
+                    <a href="/category/machines" class="category-card">
+                        <div class="category-img"><i class="fas fa-cogs"></i></div>
+                        <h3>مكن تشغيل</h3>
+                        <p>40+ منتج</p>
+                    </a>
+                    <a href="/category/accessories" class="category-card">
+                        <div class="category-img"><i class="fas fa-tools"></i></div>
+                        <h3>أدوات هاند ميد</h3>
+                        <p>200+ منتج</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PRODUCTS SECTION ====== -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">منتجات مميزة</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- المنتجات تُضاف ديناميكياً عبر JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== NEWSLETTER SECTION ====== -->
+        <section class="newsletter-section">
+            <div class="container newsletter-grid">
+                <div class="newsletter-content">
+                    <h2>اشترك في نشرتنا البريدية</h2>
+                    <p>احصل على أحدث العروض والخصومات مباشرة إلى بريدك</p>
+                    <div class="newsletter-benefits">
+                        <div class="newsletter-benefit"><i class="fas fa-check-circle"></i><span>خصومات حصرية للمشتركين</span></div>
+                        <div class="newsletter-benefit"><i class="fas fa-check-circle"></i><span>تنبيهات فورية بالعروض الجديدة</span></div>
+                        <div class="newsletter-benefit"><i class="fas fa-check-circle"></i><span>نصائح وإرشادات مجانية</span></div>
+                    </div>
+                </div>
+                <div class="newsletter-form-wrapper">
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="الاسم الكامل" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="البريد الإلكتروني" required>
+                        </div>
+                        <button type="submit" class="btn-subscribe">اشترك الآن</button>
+                        <p class="newsletter-privacy">نحن نحترم خصوصيتك. لن نشارك بياناتك مع أي طرف ثالث.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon"><i class="fas fa-spool"></i></div>
+                        <div class="footer-logo-text">Fatlah<span>.Store</span></div>
+                    </div>
+                    <p class="footer-desc">متجر فتلة - وجهتك الأولى لخيوط الغزل، الأقمشة، الملابس الجاهزة، والستائر. جودة عالية وأسعار تنافسية في مصر.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <div class="footer-links">
+                        <a href="/" class="footer-link">الرئيسية</a>
+                        <a href="/products" class="footer-link">المنتجات</a>
+                        <a href="/offers" class="footer-link">العروض</a>
+                        <a href="/about" class="footer-link">عن المتجر</a>
+                        <a href="/contact" class="footer-link">تواصل معنا</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>الأقسام</h4>
+                    <div class="footer-links">
+                        <a href="/category/yarn" class="footer-link">خيوط غزل</a>
+                        <a href="/category/fabric" class="footer-link">أقمشة</a>
+                        <a href="/category/clothes" class="footer-link">ملابس جاهزة</a>
+                        <a href="/category/curtains" class="footer-link">ستائر</a>
+                        <a href="/category/machines" class="footer-link">مكن تشغيل</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>خدمة العملاء</h4>
+                    <div class="footer-links">
+                        <a href="/faq" class="footer-link">الأسئلة الشائعة</a>
+                        <a href="/shipping" class="footer-link">الشحن والتوصيل</a>
+                        <a href="/returns" class="footer-link">سياسة الإرجاع</a>
+                        <a href="/privacy" class="footer-link">سياسة الخصوصية</a>
+                        <a href="/terms" class="footer-link">الشروط والأحكام</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>تواصل معنا</h4>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="footer-contact-text">القاهرة، مصر</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="footer-contact-text">+20 100 000 0000</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="footer-contact-text">info@fatlah.store</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2024 متجر فتلة. جميع الحقوق محفوظة.</div>
+                <div class="footer-payments">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== FLOATING ELEMENTS ====== -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/201000000000" class="whatsapp-btn" target="_blank" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="whatsapp-tooltip">تواصل معنا على واتساب</div>
+    </div>
+
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()" aria-label="فتح المحادثة">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-toggle-badge">1</span>
+        </button>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar"><i class="fas fa-headset"></i></div>
+                    <div>
+                        <div style="font-weight:700;font-size:0.9rem;">دعم فتلة</div>
+                        <div class="chat-status"><span class="chat-status-dot"></span>متصل الآن</div>
+                    </div>
+                </div>
+                <button class="chat-close" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot">
+                    <div>مرحباً! كيف يمكنني مساعدتك اليوم؟</div>
+                    <div class="chat-message-time">الآن</div>
+                </div>
+            </div>
+            <div class="chat-quick-replies">
+                <button class="chat-quick-reply" onclick="sendQuickReply('المنتجات')">المنتجات</button>
+                <button class="chat-quick-reply" onclick="sendQuickReply('الأسعار')">الأسعار</button>
+                <button class="chat-quick-reply" onclick="sendQuickReply('الشحن')">الشحن</button>
+                <button class="chat-quick-reply" onclick="sendQuickReply('العروض')">العروض</button>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="chatInput" placeholder="اكتب رسالتك..." onkeypress="handleChatKey(event)">
+                <button class="chat-send" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ====== MODAL ====== -->
+    <div class="modal-overlay" id="productModal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <img src="" alt="" class="modal-img" id="modalImg">
+                <div class="modal-info">
+                    <div class="modal-category" id="modalCategory"></div>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-rating" id="modalRating"></div>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <div class="modal-features" id="modalFeatures"></div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" onclick="addToCartFromModal()">أضف للسلة</button>
+                        <button class="btn btn-whatsapp-product" onclick="whatsappOrder()"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        // ====== SCROLL EFFECTS ======
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ====== CART ======
+        let cart = [];
+        function toggleCart() {
+            showToast('السلة', 'تم فتح السلة', 'info');
+        }
+        function addToCart(product) {
+            cart.push(product);
+            document.getElementById('cartBadge').textContent = cart.length;
+            showToast('تمت الإضافة', 'تم إضافة المنتج إلى السلة', 'success');
+        }
+        function addToCartFromModal() {
+            showToast('تمت الإضافة', 'تم إضافة المنتج إلى السلة', 'success');
+            closeModal();
+        }
+
+        // ====== WISHLIST ======
+        let wishlist = [];
+        function toggleWishlist() {
+            showToast('المفضلة', 'تم فتح المفضلة', 'info');
+        }
+        function addToWishlist(product) {
+            wishlist.push(product);
+            document.getElementById('wishlistBadge').textContent = wishlist.length;
+            showToast('تمت الإضافة', 'تم إضافة المنتج إلى المفضلة', 'success');
+        }
+
+        // ====== ACCOUNT ======
+        function toggleAccount() {
+            showToast('حسابي', 'سيتم توجيهك إلى صفحة تسجيل الدخول', 'info');
+        }
+
+        // ====== MOBILE MENU ======
+        function toggleMobileMenu() {
+            showToast('القائمة', 'سيتم فتح القائمة الجانبية', 'info');
+        }
+
+        // ====== CATEGORIES ======
+        function toggleCategories() {
+            showToast('الأقسام', 'سيتم فتح قائمة الأقسام', 'info');
+        }
+
+        // ====== CHAT ======
+        function toggleChat() {
+            document.getElementById('chatBox').classList.toggle('active');
+        }
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+            addChatMessage(message, 'user');
+            input.value = '';
+            setTimeout(() => {
+                addChatMessage('شكراً لتواصلك معنا! سيتم الرد عليك قريباً.', 'bot');
+            }, 1000);
+        }
+        function sendQuickReply(text) {
+            addChatMessage(text, 'user');
+            setTimeout(() => {
+                addChatMessage('شكراً لاهتمامك بـ ' + text + '! سنساعدك في ذلك.', 'bot');
+            }, 800);
+        }
+        function addChatMessage(text, sender) {
+            const body = document.getElementById('chatBody');
+            const div = document.createElement('div');
+            div.className = 'chat-message ' + sender;
+            div.innerHTML = '<div>' + text + '</div><div class="chat-message-time">الآن</div>';
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
+        function handleChatKey(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        // ====== NEWSLETTER ======
+   
