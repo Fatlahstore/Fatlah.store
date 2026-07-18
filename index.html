@@ -98,7 +98,7 @@
   .footer h4 { font-family:'Cinzel',serif; color:var(--accent); margin-bottom:20px; font-size:1.1rem; }
   .footer-links { list-style:none; }
   .footer-links li { margin-bottom:12px; }
-      .footer-links a { color:rgba(232,213,196,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.3s; cursor:pointer; }
+  .footer-links a { color:rgba(232,213,196,0.7); text-decoration:none; font-size:0.9rem; transition:color 0.3s; cursor:pointer; }
   .footer-links a:hover { color:var(--gold); }
   .footer-bottom { border-top:1px solid rgba(232,213,196,0.1); padding-top:24px; text-align:center; font-size:0.85rem; color:rgba(232,213,196,0.5); }
   .footer-bottom .logo-text { font-size:1rem; display:inline-block; margin-bottom:8px; }
@@ -198,7 +198,7 @@
     .product-img-wrap{height:160px;} .product-info{padding:14px;} .product-name{font-size:0.9rem;} .product-price{font-size:1rem;}
     .cart-sidebar{width:100%;right:-100%;} .modal{padding:24px;} .admin-header{flex-wrap:wrap;gap:12px;} .admin-nav{width:100%;overflow-x:auto;}
     .admin-table{font-size:0.8rem;} .admin-table th,.admin-table td{padding:10px 8px;} .admin-table img{width:36px;height:36px;}
-          .table-actions{flex-direction:column;gap:4px;} .table-btn{padding:4px 8px;font-size:0.7rem;} .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .table-actions{flex-direction:column;gap:4px;} .table-btn{padding:4px 8px;font-size:0.7rem;} .stats-grid{grid-template-columns:repeat(2,1fr);}
     .stat-card{padding:16px;} .stat-icon{width:40px;height:40px;font-size:1.1rem;} .stat-value{font-size:1.2rem;}
   }
   @media(max-width:480px){
@@ -398,7 +398,7 @@
       <button class="admin-nav-btn" onclick="switchAdminTab('products')" id="tab-products">Products</button>
       <button class="admin-nav-btn" onclick="switchAdminTab('add')" id="tab-add">Add Product</button>
       <button class="admin-nav-btn" onclick="switchAdminTab('settings')" id="tab-settings">Settings</button>
-              <button class="admin-nav-btn" onclick="logoutAdmin()" style="background:rgba(231,76,60,0.2);color:#E74C3C;">Logout</button>
+      <button class="admin-nav-btn" onclick="logoutAdmin()" style="background:rgba(231,76,60,0.2);color:#E74C3C;">Logout</button>
     </div>
   </div>
   <div class="admin-body">
@@ -498,4 +498,508 @@ const defaultProducts = [
   {id:27,name:"Silk Pajama Set - Blush",category:"clothing",price:110.00,oldPrice:null,desc:"100% mulberry silk pajama set. Button-up top and elastic waist pants.",badge:"hot",image:"https://images.unsplash.com/photo-1617331721458-bd3bd3f9c7f8?w=400&h=300&fit=crop"},
   {id:28,name:"Knitted Baby Blanket - Cream",category:"clothing",price:45.00,oldPrice:null,desc:"Soft organic cotton baby blanket. 100x80cm with scalloped edges.",badge:"new",image:"https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop"},
   {id:29,name:"Wool Felt Slippers - Grey",category:"clothing",price:35.00,oldPrice:42.00,desc:"Hand-felted wool slippers with rubber sole. Warm and durable.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
-    
+  {id:30,name:"Cotton Tote Bag - Natural",category:"clothing",price:18.00,oldPrice:null,desc:"Heavy canvas tote with leather handles. Reinforced bottom.",badge:null,image:"https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&h=300&fit=crop"},
+  {id:31,name:"Knitted Fingerless Gloves",category:"clothing",price:16.00,oldPrice:null,desc:"Wool blend fingerless gloves with thumb gusset. One size.",badge:null,image:"https://images.unsplash.com/photo-1572293007244-8b60330d35da?w=400&h=300&fit=crop"},
+  {id:32,name:"Silk Pillowcase - Ivory",category:"clothing",price:38.00,oldPrice:48.00,desc:"22 momme silk pillowcase. Reduces hair frizz and facial wrinkles.",badge:"sale",image:"https://images.unsplash.com/photo-1617331721458-bd3bd3f9c7f8?w=400&h=300&fit=crop"},
+
+  // MACHINERY (12 items)
+  {id:33,name:"Industrial Circular Knitting Machine",category:"machinery",price:2499.00,oldPrice:3200.00,desc:"High-speed circular knitting machine. 24 gauge, 30-inch diameter. Single jersey.",badge:"hot",image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:34,name:"Hand Spinning Wheel - Ashford",category:"machinery",price:450.00,oldPrice:null,desc:"Traditional spinning wheel for hand-spinning yarn. Made from New Zealand rimu wood.",badge:null,image:"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop"},
+  {id:35,name:"Sewing Machine - Brother Heavy Duty",category:"machinery",price:299.00,oldPrice:350.00,desc:"Heavy-duty sewing machine with 37 built-in stitches. Metal frame construction.",badge:"sale",image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:36,name:"Yarn Winder - Electric",category:"machinery",price:89.00,oldPrice:null,desc:"Electric yarn ball winder. Winds up to 10oz skeins. Adjustable tension.",badge:"new",image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:37,name:"Knitting Machine - Sentro 48",category:"machinery",price:180.00,oldPrice:null,desc:"48-needle hand-crank knitting machine. Perfect for hats and scarves.",badge:null,image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:38,name:"Weaving Loom - Rigid Heddle",category:"machinery",price:220.00,oldPrice:275.00,desc:"32-inch rigid heddle loom. Includes shuttle, pick-up stick, and warping pegs.",badge:"sale",image:"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop"},
+  {id:39,name:"Industrial Yarn Twister",category:"machinery",price:1850.00,oldPrice:null,desc:"Two-for-one twisting machine. 160 spindles, up to 3000 TPM.",badge:"hot",image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:40,name:"Needle Felting Machine",category:"machinery",price:320.00,oldPrice:null,desc:"Industrial needle felting machine. 500 needles, variable speed control.",badge:null,image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:41,name:"Yarn Dyeing Machine - 10kg",category:"machinery",price:1200.00,oldPrice:1500.00,desc:"Laboratory-scale yarn dyeing machine. Temperature controlled, 10kg capacity.",badge:"sale",image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:42,name:"Carding Machine - Drum",category:"machinery",price:680.00,oldPrice:null,desc:"Electric drum carder for fiber preparation. 72 tpi cloth, 8-inch width.",badge:null,image:"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop"},
+  {id:43,name:"Embroidery Machine - Computerized",category:"machinery",price:899.00,oldPrice:null,desc:"Computerized embroidery machine. 5x7 inch hoop, 80 built-in designs.",badge:"new",image:"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"},
+  {id:44,name:"Warping Mill - Vertical",category:"machinery",price:145.00,oldPrice:null,desc:"Vertical warping mill for precise warp preparation. Holds up to 14 yards.",badge:null,image:"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop"},
+
+  // ACCESSORIES (10 items)
+  {id:45,name:"Crochet Hook Set - Rosewood",category:"accessories",price:35.00,oldPrice:null,desc:"Set of 12 ergonomic crochet hooks. Sizes 2mm to 8mm in rosewood.",badge:"hot",image:"https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&h=300&fit=crop"},
+  {id:46,name:"Knitting Needle Set - Bamboo",category:"accessories",price:28.00,oldPrice:35.00,desc:"Interchangeable bamboo knitting needle set. 13 pairs with cables.",badge:"sale",image:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=300&fit=crop"},
+  {id:47,name:"Stitch Markers - 50 Pack",category:"accessories",price:8.50,oldPrice:null,desc:"Colorful locking stitch markers. Assorted sizes for all yarn weights.",badge:null,image:"https://images.unsplash.com/photo-1572293007244-8b60330d35da?w=400&h=300&fit=crop"},
+  {id:48,name:"Yarn Bowl - Ceramic",category:"accessories",price:32.00,oldPrice:null,desc:"Hand-thrown ceramic yarn bowl with spiral cut. Keeps yarn from rolling.",badge:"new",image:"https://images.unsplash.com/photo-1619250907682-6625547d690a?w=400&h=300&fit=crop"},
+  {id:49,name:"Tape Measure - Retractable",category:"accessories",price:5.99,oldPrice:null,desc:"Soft retractable tape measure. 150cm/60in with metric and imperial.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:50,name:"Blocking Mats - Set of 9",category:"accessories",price:42.00,oldPrice:null,desc:"Interlocking foam blocking mats with grid lines. 12x12 inch each.",badge:null,image:"https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:51,name:"Needle Felting Kit",category:"accessories",price:22.00,oldPrice:28.00,desc:"Complete felting kit with needles, foam pad, and wool roving assortment.",badge:"sale",image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:52,name:"Stitch Dictionary Book",category:"accessories",price:19.99,oldPrice:null,desc:"Comprehensive stitch dictionary with 400+ patterns. Hardcover, 256 pages.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:53,name:"Yarn Swift - Wooden",category:"accessories",price:38.00,oldPrice:null,desc:"Umbrella-style yarn swift. Adjustable diameter, solid wood construction.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:54,name:"Project Bag - Canvas",category:"accessories",price:15.00,oldPrice:null,desc:"Large canvas project bag with pockets. 14x12 inches with drawstring closure.",badge:null,image:"https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&h=300&fit=crop"},
+
+  // TOOLS (6 items)
+  {id:55,name:"Fabric Scissors - 8 inch",category:"tools",price:24.00,oldPrice:null,desc:"Professional dressmaker shears. High-carbon steel with ergonomic handles.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:56,name:"Seam Ripper Set - 3 Pack",category:"tools",price:6.50,oldPrice:null,desc:"Precision seam rippers with ergonomic grips. Includes thread cutter.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:57,name:"Sewing Thread Organizer",category:"tools",price:18.00,oldPrice:null,desc:"Wall-mounted thread rack. Holds 60 spools with dust cover.",badge:"new",image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:58,name:"Dress Form - Adjustable",category:"tools",price:120.00,oldPrice:150.00,desc:"Adjustable dress form, sizes S-L. Pinnable fabric cover with hem marker.",badge:"sale",image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:59,name:"Pattern Weights - Magnetic",category:"tools",price:14.00,oldPrice:null,desc:"Set of 8 magnetic pattern weights. No more pin holes in patterns.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:60,name:"Rotary Cutter Set",category:"tools",price:22.00,oldPrice:null,desc:"45mm rotary cutter with cutting mat and replacement blades.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+
+  // DYES & CHEMICALS (6 items)
+  {id:61,name:"Acid Dye Kit - 12 Colors",category:"dyes",price:35.00,oldPrice:null,desc:"Professional acid dyes for protein fibers. 10g jars with citric acid.",badge:"new",image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:62,name:"Natural Dye Extract - Indigo",category:"dyes",price:28.00,oldPrice:null,desc:"Pre-reduced indigo dye extract. Enough for 1kg of fiber.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:63,name:"Fiber Reactive Dye - Turquoise",category:"dyes",price:12.00,oldPrice:null,desc:"Procion MX fiber reactive dye for cellulose fibers. 50g jar.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:64,name:"Wool Wash - Eucalan",category:"dyes",price:14.50,oldPrice:null,desc:"Natural wool wash with eucalyptus. No-rinse formula, 500ml.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:65,name:"Mordant - Alum",category:"dyes",price:8.00,oldPrice:null,desc:"Potassium aluminum sulfate mordant. 500g for natural dyeing.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+  {id:66,name:"Dyeing Pots - Stainless Steel",category:"dyes",price:45.00,oldPrice:null,desc:"Set of 3 stainless steel dye pots. 2L, 4L, and 8L with lids.",badge:null,image:"https://images.unsplash.com/photo-1606107550924-852290f6b0d5?w=400&h=300&fit=crop"},
+];
+
+const categories = [
+  {id:"yarn",name:"Yarn & Thread",icon:"🧶",count:20,desc:"Premium fibers for every project"},
+  {id:"clothing",name:"Clothing & Apparel",icon:"👕",count:12,desc:"Handcrafted garments and accessories"},
+  {id:"machinery",name:"Machinery",icon:"⚙️",count:12,desc:"Professional textile equipment"},
+  {id:"accessories",name:"Accessories",icon:"🧵",count:10,desc:"Tools and notions for creators"},
+  {id:"tools",name:"Tools",icon:"🔧",count:6,desc:"Essential sewing and crafting tools"},
+  {id:"dyes",name:"Dyes & Chemicals",icon:"🎨",count:6,desc:"Professional dyeing supplies"},
+];
+
+// ===================== STATE =====================
+let products = [];
+let cart = [];
+let adminCode = "fatalah
+let codeVisible = false;
+let currentCategory = null;
+let editingProductId = null;
+
+// ===================== THREAD ANIMATION =====================
+(function initThreadAnimation() {
+  const canvas = document.getElementById('threadCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  const threads = [];
+  const colors = ['#E8D5C4','#D4A574','#C9A227','#A0522D','#8B4513','#F5E6D3'];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Thread {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.width = Math.random() * 1.5 + 0.5;
+      this.length = Math.random() * 80 + 40;
+      this.angle = Math.random() * Math.PI * 2;
+      this.speed = Math.random() * 0.01 + 0.005;
+      this.opacity = Math.random() * 0.3 + 0.1;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.angle += this.speed;
+      if (this.x < -100 || this.x > w + 100 || this.y < -100 || this.y > h + 100) this.reset();
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.opacity;
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = this.width;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      const x1 = this.x + Math.cos(this.angle) * this.length;
+      const y1 = this.y + Math.sin(this.angle) * this.length;
+      const cx = this.x + Math.cos(this.angle + 0.5) * this.length * 0.5;
+      const cy = this.y + Math.sin(this.angle + 0.5) * this.length * 0.5;
+      ctx.moveTo(this.x, this.y);
+      ctx.quadraticCurveTo(cx, cy, x1, y1);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  for (let i = 0; i < 60; i++) threads.push(new Thread());
+
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    threads.forEach(t => { t.update(); t.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+// ===================== SCROLL OBSERVER =====================
+(function initScrollObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+})();
+
+// ===================== NAVBAR SCROLL =====================
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) nav.style.boxShadow = '0 4px 20px rgba(139,69,19,0.1)';
+  else nav.style.boxShadow = 'none';
+});
+
+// ===================== CORE FUNCTIONS =====================
+function scrollToTop() { window.scrollTo({top:0,behavior:'smooth'}); }
+function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
+
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('mobileMenuOverlay').classList.toggle('show');
+}
+
+function openModal(id) { document.getElementById(id).classList.add('active'); }
+function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+function showToast(msg, type='success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast ' + type;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function formatPrice(p) { return 'EGP' + parseFloat(p).toFixed(2); }
+
+function getCategoryName(cat) {
+  const map = {yarn:'Yarn & Thread',clothing:'Clothing',machinery:'Machinery',accessories:'Accessories',tools:'Tools',dyes:'Dyes'};
+  return map[cat] || cat;
+}
+
+// ===================== RENDER CATEGORIES =====================
+function renderCategories() {
+  const grid = document.getElementById('categoriesGrid');
+  if (!grid) return;
+  grid.innerHTML = categories.map(c => `
+    <div class="category-card" onclick="filterByCategory('${c.id}')">
+      <div class="cat-icon">${c.icon}</div>
+      <h3>${c.name}</h3>
+      <p>${c.count} products</p>
+    </div>
+  `).join('');
+}
+
+// ===================== RENDER PRODUCTS =====================
+function renderProducts(list) {
+  const grid = document.getElementById('productsGrid');
+  if (!grid) return;
+  if (list.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-light);"><h3>No products found</h3><p>Try adjusting your search or category filter.</p></div>';
+    return;
+  }
+  grid.innerHTML = list.map(p => `
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/E8D5C4/8B4513?text=Fatlah+Store'">
+        ${p.badge ? `<span class="product-badge ${p.badge}">${p.badge}</span>` : ''}
+      </div>
+      <div class="product-info">
+        <div class="product-category">${getCategoryName(p.category)}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div class="product-price">${formatPrice(p.price)}${p.oldPrice ? `<span class="old">${formatPrice(p.oldPrice)}</span>` : ''}</div>
+          <button class="add-to-cart" onclick="addToCart(${p.id})" title="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===================== FILTER =====================
+function filterProducts() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let list = products;
+  if (currentCategory) list = list.filter(p => p.category === currentCategory);
+  if (q) list = list.filter(p => p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+  renderProducts(list);
+}
+
+function filterByCategory(cat) {
+  currentCategory = cat;
+  document.getElementById('searchInput').value = '';
+  filterProducts();
+  scrollToSection('products');
+  showToast(`Showing ${getCategoryName(cat)} products`, 'success');
+}
+
+// ===================== CART =====================
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  const existing = cart.find(x => x.id === id);
+  if (existing) existing.qty++;
+  else cart.push({...p, qty: 1});
+  updateCartUI();
+  showToast(`${p.name} added to cart!`, 'success');
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(x => x.id !== id);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const count = cart.reduce((s, x) => s + x.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  const itemsDiv = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    itemsDiv.innerHTML = `
+      <div class="cart-empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:64px;height:64px;margin-bottom:16px;opacity:0.3;"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+        <p>Your cart is empty</p>
+      </div>`;
+  } else {
+    itemsDiv.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/64x64/E8D5C4/8B4513?text=FS'">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">${formatPrice(item.price)} x ${item.qty}</div>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">&times;</button>
+      </div>
+    `).join('');
+  }
+  const total = cart.reduce((s, x) => s + x.price * x.qty, 0);
+  document.getElementById('cartTotal').textContent = formatPrice(total);
+}
+
+function toggleCart() {
+  document.getElementById('cartSidebar').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('show');
+}
+
+function checkout() {
+  if (cart.length === 0) { showToast('Your cart is empty!', 'error'); return; }
+  showToast('Checkout coming soon! Cart saved.', 'success');
+}
+
+// ===================== ADMIN =====================
+function openAdminLogin() { openModal('adminLoginModal'); document.getElementById('adminCodeInput').value = ''; document.getElementById('loginError').classList.remove('show'); }
+
+function verifyAdminCode() {
+  const input = document.getElementById('adminCodeInput').value.trim();
+  if (input === adminCode) {
+    closeModal('adminLoginModal');
+    document.getElementById('adminDashboard').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    switchAdminTab('dashboard');
+    showToast('Welcome to Admin Room!', 'success');
+  } else {
+    document.getElementById('loginError').classList.add('show');
+  }
+}
+
+function logoutAdmin() {
+  document.getElementById('adminDashboard').classList.remove('active');
+  document.body.style.overflow = '';
+  showToast('Logged out successfully', 'success');
+}
+
+function switchAdminTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('content-' + tab)?.classList.add('active');
+  document.getElementById('tab-' + tab)?.classList.add('active');
+  if (tab === 'dashboard') updateDashboard();
+  if (tab === 'products') renderAdminProducts();
+  if (tab === 'settings') updateSettings();
+}
+
+function updateDashboard() {
+  document.getElementById('statTotalProducts').textContent = products.length;
+  const cats = new Set(products.map(p => p.category)).size;
+  document.getElementById('statCategories').textContent = cats;
+  const hot = products.filter(p => p.badge === 'hot').length;
+  document.getElementById('statHot').textContent = hot;
+  const avg = products.length > 0 ? products.reduce((s,p) => s + p.price, 0) / products.length : 0;
+  document.getElementById('statAvgPrice').textContent = '$' + avg.toFixed(0);
+  const recent = products.slice(-5).reverse();
+  document.getElementById('recentProductsTable').innerHTML = recent.map(p => `
+    <tr><td><img src="${p.image}" onerror="this.src='https://via.placeholder.com/48x48/E8D5C4/8B4513?text=FS'"></td>
+    <td>${p.name}</td><td>${getCategoryName(p.category)}</td><td>${formatPrice(p.price)}</td>
+    <td>${p.badge ? '<span style="background:'+(p.badge==='hot'?'#FF6B35':p.badge==='new'?'#4CAF50':p.badge==='sale'?'#E74C3C':'#C9A227')+';color:white;padding:2px 8px;border-radius:6px;font-size:0.7rem;text-transform:uppercase;">'+p.badge+'</span>' : '-'}</td></tr>
+  `).join('');
+}
+
+function renderAdminProducts() {
+  const q = (document.getElementById('adminSearch')?.value || '').toLowerCase();
+  let list = products;
+  if (q) list = list.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+  document.getElementById('adminProductsTable').innerHTML = list.map(p => `
+    <tr><td><img src="${p.image}" onerror="this.src='https://via.placeholder.com/48x48/E8D5C4/8B4513?text=FS'"></td>
+    <td>${p.name}</td><td>${getCategoryName(p.category)}</td><td>${formatPrice(p.price)}</td>
+    <td>${p.badge || '-'}</td>
+    <td><div class="table-actions"><button class="table-btn edit" onclick="editProduct(${p.id})">Edit</button><button class="table-btn delete" onclick="deleteProduct(${p.id})">Delete</button></div></td></tr>
+  `).join('');
+}
+
+function editProduct(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  editingProductId = id;
+  document.getElementById('editProductId').value = id;
+  document.getElementById('prodName').value = p.name;
+  document.getElementById('prodCategory').value = p.category;
+  document.getElementById('prodPrice').value = p.price;
+  document.getElementById('prodOldPrice').value = p.oldPrice || '';
+  document.getElementById('prodBadge').value = p.badge || '';
+  document.getElementById('prodDesc').value = p.desc;
+  document.getElementById('addProductTitle').textContent = 'Edit Product';
+  document.getElementById('saveBtn').textContent = 'Update Product';
+  switchAdminTab('add');
+}
+
+function deleteProduct(id) {
+  if (!confirm('Are you sure you want to delete this product?')) return;
+  products = products.filter(p => p.id !== id);
+  saveProducts();
+  renderProducts(products);
+  renderAdminProducts();
+  updateDashboard();
+  showToast('Product deleted', 'success');
+}
+
+function saveProduct(e) {
+  e.preventDefault();
+  const name = document.getElementById('prodName').value.trim();
+  const category = document.getElementById('prodCategory').value;
+  const price = parseFloat(document.getElementById('prodPrice').value);
+  const oldPrice = document.getElementById('prodOldPrice').value ? parseFloat(document.getElementById('prodOldPrice').value) : null;
+  const badge = document.getElementById('prodBadge').value || null;
+  const desc = document.getElementById('prodDesc').value.trim();
+  const fileInput = document.getElementById('prodImage');
+
+  let image = 'https://via.placeholder.com/400x300/E8D5C4/8B4513?text=Fatlah+Store';
+
+  const handleSave = (img) => {
+    if (editingProductId) {
+      const idx = products.findIndex(p => p.id === editingProductId);
+      if (idx >= 0) {
+        products[idx] = {...products[idx], name, category, price, oldPrice, badge, desc, image: img || products[idx].image};
+        showToast('Product updated!', 'success');
+      }
+    } else {
+      const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+      products.push({id: newId, name, category, price, oldPrice, badge, desc, image: img || image});
+      showToast('Product added!', 'success');
+    }
+    saveProducts();
+    renderProducts(products);
+    resetProductForm();
+    switchAdminTab('products');
+  };
+
+  if (fileInput.files && fileInput.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) { handleSave(e.target.result); };
+    reader.readAsDataURL(fileInput.files[0]);
+  } else {
+    handleSave(null);
+  }
+}
+
+function previewImage(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    document.getElementById('previewImg').src = ev.target.result;
+    document.getElementById('imagePreview').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+function resetProductForm() {
+  document.getElementById('productForm').reset();
+  document.getElementById('editProductId').value = '';
+  document.getElementById('imagePreview').style.display = 'none';
+  document.getElementById('addProductTitle').textContent = 'Add New Product';
+  document.getElementById('saveBtn').textContent = 'Save Product';
+  editingProductId = null;
+}
+
+function updateSettings() {
+  document.getElementById('settingsProductCount').textContent = products.length;
+  document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+}
+
+function toggleCodeVisibility() {
+  codeVisible = !codeVisible;
+  document.getElementById('currentCodeDisplay').textContent = codeVisible ? adminCode : '••••••••';
+  document.getElementById('toggleCodeBtn').textContent = codeVisible ? 'Hide Code' : 'Show Code';
+}
+
+function openChangeCodeModal() { openModal('changeCodeModal'); document.getElementById('newCodeInput').value = ''; document.getElementById('confirmCodeInput').value = ''; document.getElementById('codeError').classList.remove('show'); }
+
+function changeAccessCode() {
+  const newCode = document.getElementById('newCodeInput').value.trim();
+  const confirm = document.getElementById('confirmCodeInput').value.trim();
+  if (newCode.length < 4 || newCode !== confirm) {
+    document.getElementById('codeError').classList.add('show');
+    return;
+  }
+  adminCode = newCode;
+  codeVisible = false;
+  document.getElementById('currentCodeDisplay').textContent = '••••••••';
+  document.getElementById('toggleCodeBtn').textContent = 'Show Code';
+  closeModal('changeCodeModal');
+  showToast('Access code changed successfully!', 'success');
+}
+
+function resetAllData() {
+  if (!confirm('WARNING: This will reset ALL products to the original 66 items. This cannot be undone. Continue?')) return;
+  products = JSON.parse(JSON.stringify(defaultProducts));
+  saveProducts();
+  renderProducts(products);
+  updateDashboard();
+  renderAdminProducts();
+  showToast('All products reset to defaults', 'success');
+}
+
+// ===================== STORAGE =====================
+function saveProducts() {
+  try { localStorage.setItem('fatlah_products', JSON.stringify(products)); } catch(e) {}
+}
+
+function loadProducts() {
+  try {
+    const stored = localStorage.getItem('fatlah_products');
+    if (stored) products = JSON.parse(stored);
+    else products = JSON.parse(JSON.stringify(defaultProducts));
+  } catch(e) {
+    products = JSON.parse(JSON.stringify(defaultProducts));
+  }
+}
+
+// ===================== INIT =====================
+document.addEventListener('DOMContentLoaded', () => {
+  loadProducts();
+  renderCategories();
+  renderProducts(products);
+  updateCartUI();
+
+  // Close modals on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+      document.getElementById('cartSidebar').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('show');
+    }
+  });
+
+  // Admin code enter key
+  document.getElementById('adminCodeInput')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') verifyAdminCode();
+  });
+});
+</script>
+</body>
+</html>
